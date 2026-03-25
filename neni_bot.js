@@ -4,13 +4,14 @@ const neniIcon = document.getElementById('neni-icon');
 let isNeniChatOpen = false;
 let hasNeniGreeted = false;
 
-window.addEventListener('scroll', () => {
-    // La Neni y El Brayan atacan a la misma altura (300px) para el caos tianguis multiagente
+function checkScrollNeni() {
     if (window.scrollY > 300 && !hasNeniGreeted) {
         toggleNeniChat();
         hasNeniGreeted = true;
     }
-});
+}
+window.addEventListener('scroll', checkScrollNeni);
+setTimeout(checkScrollNeni, 1000); // Check inicial un poquitito después de Brayan
 
 function toggleNeniChat() {
     isNeniChatOpen = !isNeniChatOpen;

@@ -19,13 +19,14 @@ const brayanIcon = document.getElementById('brayan-icon');
 let isChatOpen = false;
 let hasGreeted = false;
 
-window.addEventListener('scroll', () => {
-    // Al scrollear 300px hacia abajo, El Brayan se asoma
-    if (window.scrollY > 300 && !hasGreeted) {
+function checkScrollBrayan() {
+    if (window.scrollY > 250 && !hasGreeted) {
         toggleChat();
         hasGreeted = true;
     }
-});
+}
+window.addEventListener('scroll', checkScrollBrayan);
+setTimeout(checkScrollBrayan, 800); // Check inicial por si ya estaban a medio sitio
 
 function toggleChat() {
     isChatOpen = !isChatOpen;
