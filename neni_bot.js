@@ -5,8 +5,8 @@ let isNeniChatOpen = false;
 let hasNeniGreeted = false;
 
 window.addEventListener('scroll', () => {
-    // La Neni se asoma pero a los 400px de scroll para no espantarlos con los dos de jalón
-    if (window.scrollY > 400 && !hasNeniGreeted) {
+    // La Neni y El Brayan atacan a la misma altura (300px) para el caos tianguis multiagente
+    if (window.scrollY > 300 && !hasNeniGreeted) {
         toggleNeniChat();
         hasNeniGreeted = true;
     }
@@ -15,10 +15,7 @@ window.addEventListener('scroll', () => {
 function toggleNeniChat() {
     isNeniChatOpen = !isNeniChatOpen;
     if (isNeniChatOpen) {
-        // Cierra al Brayan si estaba abierto pa' que no estorbe (la cliente es primero)
-        if (typeof toggleChat === 'function' && typeof isChatOpen !== 'undefined' && isChatOpen) {
-            toggleChat();
-        }
+        // En estética tianguis, ya NO cerramos a Brayan, ¡puro mercado libre gritando al mismo tiempo!
         
         neniChat.style.display = 'flex';
         neniIcon.innerHTML = '💅';

@@ -30,11 +30,8 @@ window.addEventListener('scroll', () => {
 function toggleChat() {
     isChatOpen = !isChatOpen;
     if (isChatOpen) {
-        // Silenciar a La Neni si estaba abierta (Cierran el hocicu al otro)
-        if (typeof isNeniChatOpen !== 'undefined' && isNeniChatOpen && typeof toggleNeniChat === 'function') {
-            toggleNeniChat();
-        }
-
+        // En estética tianguis, ya NO cerramos a La Neni, ¡que griten los dos al mismo tiempo!
+        
         brayanChat.style.display = 'flex';
         brayanIcon.innerHTML = '❌';
         brayanIcon.style.animation = 'none';
