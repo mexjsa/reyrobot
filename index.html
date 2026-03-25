@@ -104,9 +104,29 @@
         <p>Hecho en México. Rey Robot © 2026. ¡Sin excusas ni pretextos!</p>
     </footer>
 
+    <!-- ARCHIVOS DE ESTILO EXTRAS -->
+    <link rel="stylesheet" href="neni.css">
+
     <!-- SDK de Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- LA NENI CHATBOT (LADO IZQUIERDO) -->
+    <div id="neni-chat-container">
+        <div id="neni-chat-window">
+            <div class="chat-header-neni">
+                <img src="img/neni.png" alt="La Neni Avatar">
+                <div>
+                    <strong>LA NENI 🛍️</strong>
+                    <span>En punto medio cerrando trato ✨</span>
+                </div>
+            </div>
+            <div id="neni-messages"></div>
+        </div>
+        <div id="neni-icon" onclick="toggleNeniChat()">
+            <img src="img/neni.png" alt="Neni Chat" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+        </div>
+    </div>
 
     <!-- EL BRAYAN CHATBOT -->
     <div id="brayan-chat-container">
@@ -125,6 +145,7 @@
         </div>
     </div>
 
+    <script src="neni_bot.js"></script>
     <script src="brayan_bot.js"></script>
 
     <script>

@@ -1,0 +1,151 @@
+/* LA NENI CHATBOT (ESTÉTICA AESTHETIC / BARRIO FINO) */
+#neni-chat-container {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; 
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#neni-icon {
+    width: 90px;
+    height: 90px;
+    background: #ffb6c1; /* Rosa claro pastel */
+    border: 5px solid var(--rosa-mexicano);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 var(--blanco-puro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    animation: flotarNeni 3s infinite ease-in-out;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+#neni-icon:hover { transform: scale(1.15) rotate(-5deg); }
+
+@keyframes flotarNeni {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+#neni-chat-window {
+    width: 360px;
+    height: 520px;
+    background: #fffafa; /* lavender blush */
+    border: 5px solid var(--rosa-mexicano);
+    margin-bottom: 20px;
+    border-radius: 20px 20px 20px 0px; 
+    display: none; 
+    flex-direction: column;
+    box-shadow: 12px 12px 0 var(--rosa-mexicano);
+    overflow: hidden;
+}
+
+.chat-header-neni {
+    background: var(--rosa-mexicano);
+    color: var(--blanco-puro);
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 5px dashed var(--blanco-puro);
+}
+.chat-header-neni img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--blanco-puro);
+    object-fit: cover;
+    background: white;
+}
+.chat-header-neni div { display: flex; flex-direction: column; line-height: 1; text-align: left; }
+.chat-header-neni strong { font-size: 1.6rem; letter-spacing: 1px; color: var(--blanco-puro); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);}
+.chat-header-neni span { font-family: 'Roboto Condensed'; font-size: 0.9rem; font-weight: bold; color: #ffb6c1; margin-top: 5px; }
+
+#neni-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #fff0f5;
+    background-image: radial-gradient(rgba(230,0,126,0.3) 1px, transparent 1px);
+    background-size: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Modificamos los mensajes uniendo selectores seguros */
+.msg-n {
+    padding: 12px 15px;
+    border-radius: 12px;
+    max-width: 85%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 3px solid var(--rosa-mexicano);
+    box-shadow: 3px 3px 0 var(--rosa-mexicano);
+    position: relative;
+}
+
+.msg-n::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 0; border: 10px solid transparent;
+}
+
+.msg-n.bot-n {
+    background: var(--blanco-puro);
+    color: var(--rosa-mexicano);
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 0;
+}
+.msg-n.bot-n::after {
+    border-top-color: var(--rosa-mexicano);
+    left: -12px; bottom: -3px; transform: rotate(45deg);
+}
+
+.msg-n.user-n {
+    background: #ffb6c1; /* rosa pastel */
+    color: var(--negro-profundo);
+    align-self: flex-end;
+    border-radius: 15px 15px 0 15px;
+    text-align: right;
+}
+.msg-n.user-n::after {
+    border-top-color: var(--rosa-mexicano);
+    right: -12px; bottom: -3px; transform: rotate(-45deg);
+}
+
+.typing-n { opacity: 0.7; font-size: 0.95rem; font-style: italic; background: transaparent; box-shadow: none; border: none; }
+
+.btn-chat-neni-opt {
+    background: var(--blanco-puro);
+    color: var(--rosa-mexicano);
+    border: 3px solid var(--rosa-mexicano);
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 20px;
+    box-shadow: 3px 3px 0 var(--rosa-mexicano);
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.btn-chat-neni-opt:hover {
+    background: var(--rosa-mexicano);
+    color: var(--blanco-puro);
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+    #neni-chat-window { width: 90vw; left: 5vw; bottom: 100px; position: fixed;}
+}
