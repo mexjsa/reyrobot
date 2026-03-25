@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- REPRODUCTOR SONIDERO -->
+    <div id="sonidero-player" onclick="toggleAudio()">
+        <span id="sonidero-icon">📻</span>
+        <span id="sonidero-text">PONLE PLAY AL BARRIO</span>
+    </div>
+    <audio id="bg-audio" loop>
+        <!-- Reemplaza con tu cumbia o sonido de calle favorito -->
+        <source src="audio/barrio.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="marquee-top">
         <marquee scrollamount="15">🚨 ¡LLEVELE LLEVELE! TECNOLOGÍA QUE SÍ ENTIENDE SU NEGOCIO 🚨 ¡LLEVELE LLEVELE! 🚨 PRECIOS BARA BARA 🚨</marquee>
     </div>
@@ -116,5 +126,37 @@
     </div>
 
     <script src="brayan_bot.js"></script>
+
+    <script>
+        // Logica del reproductor de cumbia
+        const bgAudio = document.getElementById('bg-audio');
+        const sonideroPlayer = document.getElementById('sonidero-player');
+        const sonideroText = document.getElementById('sonidero-text');
+        const sonideroIcon = document.getElementById('sonidero-icon');
+        let isAudioPlaying = false;
+
+        function toggleAudio() {
+            if (isAudioPlaying) {
+                bgAudio.pause();
+                sonideroPlayer.classList.remove('playing');
+                sonideroText.innerText = "PONLE PLAY AL BARRIO";
+                sonideroIcon.innerText = "📻";
+            } else {
+                bgAudio.volume = 0.3; // Volumen bajo para que The Brayan no grite
+                
+                // Si el MP3 no existe (hasta que lo metas a la carpeta), evitamos tronar
+                bgAudio.play().catch(e => {
+                    sonideroText.innerText = "¡FALTA EL MP3!";
+                });
+                
+                sonideroPlayer.classList.add('playing');
+                if(sonideroText.innerText !== "¡FALTA EL MP3!") {
+                    sonideroText.innerText = "SONANDO PERRON...";
+                }
+                sonideroIcon.innerText = "🔊";
+            }
+            isAudioPlaying = !isAudioPlaying;
+        }
+    </script>
 </body>
 </html>

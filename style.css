@@ -534,6 +534,45 @@ footer {
     box-shadow: 7px 7px 0 var(--negro-profundo);
 }
 
+/* REPRODUCTOR SONIDERO (MÚSICA PERRONA) */
+#sonidero-player {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+    background: var(--naranja-fluor);
+    border: 4px solid var(--negro-profundo);
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--blanco-puro), 8px 8px 0 var(--negro-profundo);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.2rem;
+    color: var(--negro-profundo);
+    text-transform: uppercase;
+}
+
+#sonidero-player:hover {
+    transform: translate(-3px, -3px) rotate(-2deg);
+    box-shadow: 7px 7px 0 var(--blanco-puro), 11px 11px 0 var(--negro-profundo);
+}
+
+#sonidero-player.playing {
+    background: var(--verde-limon);
+    color: var(--negro-profundo);
+    animation: estrobo 0.5s infinite alternate;
+}
+
+@keyframes estrobo {
+    from { box-shadow: 0 0 10px var(--verde-limon), 5px 5px 0 black; }
+    to { box-shadow: 0 0 30px var(--verde-limon), 5px 5px 0 black; }
+}
+
 @media (max-width: 768px) {
     #brayan-chat-window { width: 90vw; right: 5vw; bottom: 100px; position: fixed;}
+    #sonidero-player { top: 10px; left: 10px; font-size: 0.9rem; padding: 8px 10px; }
 }
