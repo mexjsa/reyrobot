@@ -161,8 +161,8 @@ function sendLead() {
         addBotMsg('¡Vientos huracanados mi estimado ' + nombre + '! Ya le pasé el pitazo a la jefa de jefes allá en la base de datos de Firebase. Agarra tu celular porque ya mero te marcan para subirte a la zona VIP. 📞🚀');
     }).catch((error) => {
         console.error("Error subiendo lead de Brayan: ", error);
-        btn.innerText = "Error (Llámame)";
-        addBotMsg('¡Sopas! Hubo una trabada en el cable de la luz. Échate un telefonazo o Whats directo al 55 5555 5555 padrino, no te quedes con las ganas.');
+        btn.innerText = "Error (Manda Whats)";
+        addBotMsg('¡Sopas! Hubo una trabada en el cable de la luz. Échate un telefonazo o Whats directo al 55 1480 3488 padrino, no te quedes con las ganas.');
     });
 }
 
