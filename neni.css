@@ -2,7 +2,7 @@
 #neni-chat-container {
     position: fixed;
     bottom: 25px;
-    left: 25px; 
+    left: 80px;  /* Empujado a la derecha para que no corte borde de pantalla */
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -37,6 +37,7 @@
 #neni-chat-window {
     width: 360px;
     height: 520px;
+    max-height: 65vh; /* Evita chocar con el estéreo de cumbia de arriba */
     background: #fffafa; /* lavender blush */
     border: 5px solid var(--rosa-mexicano);
     margin-bottom: 20px;
@@ -147,5 +148,13 @@
 }
 
 @media (max-width: 768px) {
-    #neni-chat-window { width: 90vw; left: 5vw; bottom: 100px; position: fixed;}
+    #neni-chat-container {
+        left: 20px;
+    }
+    #neni-chat-window { 
+        width: 85vw; 
+        position: relative !important; 
+        left: auto !important; 
+        bottom: auto !important;
+    }
 }
