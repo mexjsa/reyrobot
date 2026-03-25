@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rey Robot | Tecnología pa' su Negocio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="marquee-top">
+        <marquee scrollamount="15">🚨 ¡LLEVELE LLEVELE! TECNOLOGÍA QUE SÍ ENTIENDE SU NEGOCIO 🚨 ¡LLEVELE LLEVELE! 🚨 PRECIOS BARA BARA 🚨</marquee>
+    </div>
+
+    <header class="header-opulencia">
+        <h1 class="visually-hidden">REY ROBOT</h1>
+        
+        <div class="puesto-mercado">
+            
+            <img src="img/logo.png" alt="Rey Robot Logo Rotulo" class="hero-logo-centro">
+            
+            <div class="cartulina-imagen c-1">
+                <img src="img/c_auto.png" alt="Automatizaciones" class="foto-cartulina">
+                <p class="nota">mas barato ni que fuera tu chavo</p>
+            </div>
+            
+            <div class="cartulina-imagen c-2">
+                <img src="img/c_lec.png" alt="Lectores" class="foto-cartulina">
+                <p class="nota">por poco y te hago tu chamba papi</p>
+            </div>
+            
+            <div class="cartulina-imagen c-3">
+                <img src="img/c_chat.png" alt="Chatbots" class="foto-cartulina">
+                <p class="nota">son de hoy</p>
+            </div>
+            
+            <div class="cartulina-imagen c-4">
+                <img src="img/c_web.png" alt="Webs" class="foto-cartulina">
+                <p class="nota">con personalidad y no mam*das</p>
+            </div>
+            
+            <div class="cartulina-imagen c-5">
+                <img src="img/c_let.png" alt="Lettering" class="foto-cartulina">
+                <p class="nota">put* que oferton</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- PRODUCT 1: CHATBOTS TIANGUIS -->
+        <section class="section-tianguis">
+            <div class="card-container">
+                <div class="card-img">
+                    <img src="img/chatbots.png" alt="Chatbots al estilo tianguis">
+                </div>
+                <div class="card-content">
+                    <h3>CHATBOTS CHINGONES 💬</h3>
+                    <p class="desc">Contestan a toda hora. No comen, no duermen, no piden vacaciones. ¡Su mejor empleado vendiendo 24/7 en Facebook y Whats!</p>
+                    <div class="price-burst">
+                        <span>¡BARA BARA!</span>
+                    </div>
+                    <a href="#contacto" class="btn-comprar btn-tianguis">¡TRATOS AQUI!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 2: WEBS SONIDERO -->
+        <section class="section-sonidero">
+            <div class="marquee-mid">
+                <marquee scrollamount="20" direction="right">🔊 SAAAABOR... LLEGÓ EL SONIDO DEL INTERNET 🔊</marquee>
+            </div>
+            <div class="card-container reverse">
+                <div class="card-content">
+                    <h3>PÁGINAS WEB MAMALONAS 💻</h3>
+                    <p class="desc">Ponga su negocio en el mapa mundial de la internet. Calidad, presencia y harto estilo. ¡Que lo encuentre y lo vea todo el bendito barrio mundial!</p>
+                    <a href="#contacto" class="btn-comprar btn-sonidero">QUIERO MI PÁGINA</a>
+                </div>
+                <div class="card-img">
+                    <img src="img/webs.png" alt="Cumbias Web Sonidero">
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTACTO BARDA -->
+        <section id="contacto" class="contact-barda">
+            <h2>¿LISTO PA' ESTRENAR TECNOLOGÍA?</h2>
+            <p>Eche su fonazo o mande Whats. Lo atendemos como rey.</p>
+            <div class="phone">📞 55 5555 5555</div>
+            <p class="footer-note">Garantizado por NexosIA, pero hecho pa' la verdadera raza trabajadora.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hecho en México. Rey Robot © 2026. ¡Sin excusas ni pretextos!</p>
+    </footer>
+
+    <!-- SDK de Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- EL BRAYAN CHATBOT -->
+    <div id="brayan-chat-container">
+        <div id="brayan-chat-window">
+            <div class="chat-header">
+                <img src="img/brayan.png" alt="El Brayan Avatar">
+                <div>
+                    <strong>EL BRAYAN 🦷</strong>
+                    <span>Tu chale de I.A. (En línea)</span>
+                </div>
+            </div>
+            <div id="brayan-messages"></div>
+        </div>
+        <div id="brayan-icon" onclick="toggleChat()">
+            <img src="img/brayan.png" alt="Chat" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+        </div>
+    </div>
+
+    <script src="brayan_bot.js"></script>
+</body>
+</html>

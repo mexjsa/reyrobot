@@ -1,0 +1,539 @@
+/* VARIABLES DE COLOR ESTILO RÓTULOS/TIANGUIS */
+:root {
+    --rosa-mexicano: #e6007e;
+    --amarillo-fosfo: #fff200;
+    --azul-cobalto: #0047b3;
+    --verde-limon: #39ff14;
+    --naranja-fluor: #ff6600;
+    --negro-profundo: #111;
+    --blanco-puro: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: var(--amarillo-fosfo);
+    color: var(--negro-profundo);
+    overflow-x: hidden;
+    /* Un pattern simple que simule pared de tianguis o lona */
+    background-image: radial-gradient(var(--rosa-mexicano) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+h1, h2, h3 {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* MARQUEES */
+.marquee-top, .marquee-mid {
+    background-color: var(--negro-profundo);
+    color: var(--verde-limon);
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px var(--rosa-mexicano);
+    border-bottom: 5px solid var(--amarillo-fosfo);
+}
+
+.marquee-mid {
+    color: #00e5ff;
+    text-shadow: 2px 2px 0px var(--naranja-fluor);
+    border-top: 5px solid var(--blanco-puro);
+    border-bottom: 5px solid var(--blanco-puro);
+}
+
+/* HEADER OPULENCIA (MERCADO / BARDA) */
+.header-opulencia {
+    background-image: url('img/bg_pared_callejera.png');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 10px;
+    position: relative;
+    border-bottom: 15px solid var(--negro-profundo);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+
+.puesto-mercado {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-centro {
+    position: relative;
+    z-index: 10;
+    max-width: 400px;
+    border: 12px solid var(--amarillo-fosfo);
+    border-radius: 10px;
+    box-shadow: 15px 15px 0px var(--negro-profundo), 0px 0px 50px rgba(0,0,0,0.8);
+    background-color: var(--blanco-puro);
+    transform: rotate(-3deg);
+    transition: transform 0.3s;
+}
+
+.hero-logo-centro:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* CARTULINAS FOTO REALES */
+.cartulina-imagen {
+    position: absolute;
+    z-index: 5;
+    transition: transform 0.2s, z-index 0.2s;
+    text-align: center;
+    width: 320px;
+}
+
+.cartulina-imagen:hover {
+    transform: scale(1.15) !important;
+    z-index: 20;
+}
+
+.foto-cartulina {
+    width: 100%;
+    height: auto;
+    border: 5px solid var(--negro-profundo);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.8), -5px -5px 15px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    margin-bottom: -20px; /* Para que la nota quede encimada como etiqueta extra */
+    position: relative;
+    z-index: 1;
+}
+
+/* El diurex virtual tapando la foto */
+.cartulina-imagen::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 40%;
+    width: 70px;
+    height: 35px;
+    background: rgba(255,255,255,0.7);
+    transform: rotate(-10deg);
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+.cartulina-imagen .nota {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--blanco-puro);
+    background: var(--negro-profundo);
+    padding: 8px 12px;
+    display: inline-block;
+    border: 3px solid var(--naranja-fluor);
+    transform: rotate(3deg);
+    position: relative;
+    z-index: 3;
+    box-shadow: 5px 5px 0 rgba(0,0,0,1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* POSICIONES MERCADO - 5 CARTULINAS */
+.c-1 { top: 0; left: 8%; transform: rotate(-6deg); z-index: 6;}
+.c-2 { bottom: 10px; left: 12%; transform: rotate(4deg); z-index: 7;}
+.c-3 { top: 60px; right: 8%; transform: rotate(8deg); z-index: 8;}
+.c-4 { bottom: 30px; right: 10%; transform: rotate(-5deg); z-index: 9;}
+.c-5 { top: -20px; left: 45%; transform: rotate(10deg); z-index: 4; }
+
+@media (max-width: 1000px) {
+    .puesto-mercado {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .cartulina {
+        position: relative;
+        top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+        transform: rotate(0) !important;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 320px;
+    }
+    .hero-logo-centro {
+        margin-bottom: 30px;
+        max-width: 90%;
+    }
+}
+
+/* SECTIONS STRUCTURE */
+section {
+    padding: 60px 20px;
+}
+
+.card-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--blanco-puro);
+    padding: 30px;
+    border: 8px solid var(--negro-profundo);
+    box-shadow: 15px 15px 0px var(--azul-cobalto);
+    border-radius: 5px;
+}
+
+.card-container.reverse {
+    flex-direction: row-reverse;
+    box-shadow: -15px 15px 0px var(--rosa-mexicano);
+}
+
+.card-img {
+    flex: 1 1 350px;
+    text-align: center;
+}
+
+.card-img img {
+    max-width: 100%;
+    border: 6px solid var(--negro-profundo);
+    box-shadow: 8px 8px 0px var(--naranja-fluor);
+    transform: rotate(3deg);
+}
+.card-container.reverse .card-img img {
+    transform: rotate(-3deg);
+    box-shadow: -8px 8px 0px var(--verde-limon);
+}
+
+.card-content {
+    flex: 1 1 400px;
+    position: relative;
+}
+
+.card-content h3 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px var(--blanco-puro), 5px 5px 0px var(--negro-profundo);
+}
+
+.card-content .desc {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-left: 8px solid var(--rosa-mexicano);
+}
+
+/* TIANGUIS STYLE */
+.section-tianguis .card-container {
+    background-color: var(--naranja-fluor);
+    border-color: var(--blanco-puro);
+}
+.section-tianguis h3 {
+    color: var(--amarillo-fosfo);
+}
+.price-burst {
+    position: absolute;
+    top: -50px;
+    right: -20px;
+    background: var(--rosa-mexicano);
+    color: var(--blanco-puro);
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    padding: 20px;
+    border-radius: 50%;
+    border: 5px dashed var(--amarillo-fosfo);
+    transform: rotate(15deg);
+    box-shadow: 5px 5px 0px var(--negro-profundo);
+    animation: blink 1s infinite alternate;
+}
+
+/* SONIDERO STYLE */
+.section-sonidero {
+    background-color: var(--negro-profundo);
+    color: var(--blanco-puro);
+}
+.section-sonidero .card-container {
+    background: radial-gradient(circle, #333 0%, var(--negro-profundo) 100%);
+    border-color: var(--verde-limon);
+}
+.section-sonidero h3 {
+    color: #00e5ff;
+    text-shadow: 3px 3px 0px var(--rosa-mexicano), 6px 6px 0px var(--negro-profundo);
+}
+.section-sonidero .desc {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--blanco-puro);
+    border-left-color: var(--verde-limon);
+}
+
+/* BUTTONS */
+.btn-comprar {
+    display: inline-block;
+    padding: 15px 40px;
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--negro-profundo);
+    border: 5px solid var(--negro-profundo);
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-tianguis {
+    background-color: var(--amarillo-fosfo);
+    box-shadow: 6px 6px 0px var(--blanco-puro), 10px 10px 0px var(--negro-profundo);
+}
+.btn-tianguis:hover {
+    background-color: var(--blanco-puro);
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px 0px var(--amarillo-fosfo), 14px 14px 0px var(--negro-profundo);
+}
+
+.btn-sonidero {
+    background-color: var(--rosa-mexicano);
+    color: var(--blanco-puro);
+    border-color: var(--blanco-puro);
+    box-shadow: 6px 6px 0px var(--verde-limon), 10px 10px 0px var(--negro-profundo);
+}
+.btn-sonidero:hover {
+    background-color: var(--verde-limon);
+    color: var(--negro-profundo);
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px 0px var(--rosa-mexicano), 14px 14px 0px var(--negro-profundo);
+}
+
+/* CONTACTO (Bardas) */
+.contact-barda {
+    background-color: var(--blanco-puro);
+    text-align: center;
+    border-top: 15px solid var(--rosa-mexicano);
+    border-bottom: 15px solid var(--azul-cobalto);
+}
+.contact-barda h2 {
+    font-size: 4rem;
+    color: var(--azul-cobalto);
+    text-shadow: 3px 3px 0 var(--amarillo-fosfo), 6px 6px 0 var(--negro-profundo);
+    margin-bottom: 20px;
+    transform: skew(-5deg);
+}
+.contact-barda p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--negro-profundo);
+}
+.contact-barda .phone {
+    font-family: 'Anton', sans-serif;
+    font-size: 6rem;
+    color: var(--rosa-mexicano);
+    margin: 30px 0;
+    text-shadow: 5px 5px 0px var(--negro-profundo);
+    animation: scaleBomb 1.5s infinite alternate ease-in-out;
+}
+.contact-barda .footer-note {
+    font-size: 1.2rem;
+    background-color: var(--amarillo-fosfo);
+    display: inline-block;
+    padding: 10px;
+    border: 3px solid var(--negro-profundo);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--negro-profundo);
+    color: var(--blanco-puro);
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ANIMATIONS */
+@keyframes blink {
+    0% { transform: rotate(15deg) scale(1); }
+    100% { transform: rotate(15deg) scale(1.1); background-color: var(--verde-limon); color: var(--negro-profundo); }
+}
+
+@keyframes scaleBomb {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); color: var(--naranja-fluor); }
+}
+
+/* EL BRAYAN CHATBOT (ESTÉTICA BARRIO/TIANGUIS) */
+#brayan-chat-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#brayan-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--verde-limon);
+    border: 5px solid var(--negro-profundo);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 var(--rosa-mexicano);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    animation: vibra 3s infinite;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+#brayan-icon:hover { transform: scale(1.15) rotate(5deg); }
+
+@keyframes vibra {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1) rotate(5deg); }
+    20% { transform: scale(1) rotate(-5deg); }
+    30% { transform: scale(1); }
+}
+
+#brayan-chat-window {
+    width: 360px;
+    height: 520px;
+    background: var(--blanco-puro);
+    border: 5px solid var(--negro-profundo);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: none; /* Inicia oculto */
+    flex-direction: column;
+    box-shadow: 12px 12px 0 var(--azul-cobalto);
+    overflow: hidden;
+}
+
+.chat-header {
+    background: var(--naranja-fluor);
+    color: var(--negro-profundo);
+    font-family: 'Anton', sans-serif;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 5px solid var(--negro-profundo);
+}
+.chat-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--blanco-puro);
+    object-fit: cover;
+    background: white;
+}
+.chat-header div { display: flex; flex-direction: column; line-height: 1; text-align: left;}
+.chat-header strong { font-size: 1.5rem; letter-spacing: 1px; color: var(--blanco-puro); text-shadow: 2px 2px 0 var(--negro-profundo);}
+.chat-header span { font-family: 'Roboto Condensed'; font-size: 0.9rem; font-weight: bold; color: var(--negro-profundo); margin-top: 5px; }
+
+#brayan-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #e5e5e5;
+    background-image: radial-gradient(var(--negro-profundo) 1px, transparent 1px);
+    background-size: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.msg {
+    padding: 12px 15px;
+    border-radius: 10px;
+    max-width: 85%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 3px solid var(--negro-profundo);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* El "rabito" del globo de chat */
+.msg::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+}
+
+.msg.bot {
+    background: var(--amarillo-fosfo);
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+}
+.msg.bot::after {
+    border-top-color: var(--negro-profundo);
+    left: -12px;
+    bottom: -3px;
+    transform: rotate(45deg);
+}
+
+.msg.user {
+    background: var(--verde-limon);
+    align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
+    text-align: right;
+}
+.msg.user::after {
+    border-top-color: var(--negro-profundo);
+    right: -12px;
+    bottom: -3px;
+    transform: rotate(-45deg);
+}
+
+.typing { opacity: 0.7; font-size: 0.95rem; font-style: italic; background: #fff !important; box-shadow: none !important;}
+
+.chat-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.btn-chat-opt {
+    background: var(--blanco-puro);
+    color: var(--azul-cobalto);
+    border: 4px solid var(--azul-cobalto);
+    padding: 10px;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--azul-cobalto);
+}
+.btn-chat-opt:hover {
+    background: var(--azul-cobalto);
+    color: var(--blanco-puro);
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--negro-profundo);
+}
+
+@media (max-width: 768px) {
+    #brayan-chat-window { width: 90vw; right: 5vw; bottom: 100px; position: fixed;}
+}
