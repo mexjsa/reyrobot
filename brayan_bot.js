@@ -1,6 +1,6 @@
-// Configuración de Firebase (Base de datos compartida)
+// Configuración de Firebase — la apiKey viene de config.js (nunca hardcodear aquí)
 const firebaseConfig = {
-    apiKey: "YOUR_GOOGLE_API_KEY",
+    apiKey: window.ENV?.GOOGLE_API_KEY,
     authDomain: "calle9-2ca66.firebaseapp.com",
     projectId: "calle9-2ca66",
     storageBucket: "calle9-2ca66.firebasestorage.app",
